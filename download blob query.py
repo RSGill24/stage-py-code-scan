@@ -1,7 +1,3 @@
-echo "⬇️ Downloading file $(BLOB_FILE_NAME) from Azure Blob Storage..."
-pip install azure-storage-blob -q
-
-python - <<'PYCODE'
 import os, re
 from azure.storage.blob import BlobServiceClient
 
@@ -30,4 +26,3 @@ with open(output_path, "wb") as f:
     f.write(blob_client.download_blob().readall())
 
 print(f"✅ File downloaded successfully to: {output_path}")
-PYCODE
