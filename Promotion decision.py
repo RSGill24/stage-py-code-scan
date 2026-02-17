@@ -1,7 +1,3 @@
-echo "🚀 Promotion decision approved."
-echo "✅ Proceeding to promote dataset."
-
-python - <<'PYCODE'
 import os
 import snowflake.connector
 
@@ -75,4 +71,5 @@ cur.close()
 conn.close()
 
 print("✅ Promotion decision successfully logged to Snowflake.")
-PYCODE
+
+
