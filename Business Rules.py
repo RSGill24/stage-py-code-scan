@@ -1,4 +1,3 @@
-python - <<'PYCODE'
 import os, re
 from azure.storage.blob import BlobServiceClient
 
@@ -30,5 +29,6 @@ with open(output_path, "wb") as f:
     f.write(blob_client.download_blob().readall())
 
 print(f"✅ File downloaded successfully to: {output_path}")
-PYCODE
+
+
 
