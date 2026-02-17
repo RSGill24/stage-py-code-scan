@@ -1,7 +1,3 @@
-echo "⬇️ Downloading file $(BLOB_FILE_NAME) from Azure Blob Storage..."
-pip install azure-storage-blob -q
-
-python - <<'PYCODE'
 import os, re, sys
 from azure.storage.blob import BlobServiceClient
 
@@ -57,4 +53,3 @@ if ext not in expected_formats:
     sys.exit(1)
 
 print(f"✅ File format check passed: {ext}")
-PYCODE
