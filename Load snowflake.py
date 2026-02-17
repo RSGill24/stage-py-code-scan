@@ -1,8 +1,3 @@
-echo "🚀 Starting Snowflake load stage..."
-echo "📦 Installing required Python packages..."
-pip install --user snowflake-connector-python azure-storage-blob -q
-
-python <<'PYCODE'
 import os, re, sys
 from azure.storage.blob import BlobServiceClient
 import snowflake.connector
@@ -120,4 +115,5 @@ print("✅ Data loaded successfully")
 
 cur.close()
 conn.close()
-PYCODE
+
+
