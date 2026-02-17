@@ -30,9 +30,4 @@ with open(output_path, "wb") as f:
 
 print(f"✅ File downloaded successfully to: {output_path}")
 
-echo "🔍 Validating file format..."
-echo "📂 File path is: /home/vsts/work/_temp/downloads/$(BLOB_FILE_NAME)"
 
-python "$(System.DefaultWorkingDirectory)/_Landing a file in EDL in less than 24 hours/scripts/validate_structure.py" \
-
-  --file "/home/vsts/work/_temp/downloads/$(BLOB_FILE_NAME)"
