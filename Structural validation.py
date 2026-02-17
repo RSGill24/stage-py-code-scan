@@ -1,11 +1,3 @@
-# Choose a predictable, writable directory
-DOWNLOAD_DIR="/home/vsts/work/_temp/downloads"
-mkdir -p "$DOWNLOAD_DIR"
-
-echo "⬇️ Downloading file $(BLOB_FILE_NAME) from Azure Blob Storage into $DOWNLOAD_DIR..."
-pip install azure-storage-blob pandas -q
-
-python - <<'PYCODE'
 import os, re
 from azure.storage.blob import BlobServiceClient
 
@@ -37,11 +29,10 @@ with open(output_path, "wb") as f:
     f.write(blob_client.download_blob().readall())
 
 print(f"✅ File downloaded successfully to: {output_path}")
-PYCODE
 
-# ✅ Now run validation on that same file
 echo "🔍 Validating file format..."
 echo "📂 File path is: /home/vsts/work/_temp/downloads/$(BLOB_FILE_NAME)"
 
 python "$(System.DefaultWorkingDirectory)/_Landing a file in EDL in less than 24 hours/scripts/validate_structure.py" \
+
   --file "/home/vsts/work/_temp/downloads/$(BLOB_FILE_NAME)"
